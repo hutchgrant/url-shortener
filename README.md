@@ -11,7 +11,7 @@ Demonstrate a quick example of a front and backend react/node.js/mongo applicati
 ### Install
 
 ```
-npm install-all
+npm run install-all
 ```
 
 ### Configure

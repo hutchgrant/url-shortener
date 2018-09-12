@@ -19,10 +19,16 @@ class Page extends Component {
     if (this.props.guest) {
       if (this.props.guest.url) {
         window.location = this.props.guest.url.long;
-        this.setState({ loading: false, url: this.props.guest.url.long });
+        this.setState({
+          loading: false,
+          url: this.props.guest.url.long,
+          error: false
+        });
       } else {
         this.setState({ loading: false, error: true });
       }
+    } else {
+      this.setState({ loading: false, error: true });
     }
   }
 

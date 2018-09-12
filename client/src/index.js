@@ -11,18 +11,19 @@ import reduxThunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
 
-// const composeEnhancers = null;
-const composeEnhancers =
-  process.env.NODE_ENV === 'development'
-    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    : null || compose;
+// uncomment if you have redux tools extension installed
+// const composeEnhancers =
+//   process.env.NODE_ENV === 'development'
+//     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+//     : null || compose;
 
-// const store = createStore(reducers, applyMiddleware(reduxThunk));
-const store = createStore(
-  reducers,
-  {},
-  composeEnhancers(applyMiddleware(reduxThunk))
-);
+// const store = createStore(
+//   reducers,
+//   {},
+//   composeEnhancers(applyMiddleware(reduxThunk))
+// );
+
+const store = createStore(reducers, applyMiddleware(reduxThunk));
 
 ReactDom.render(
   <Provider store={store}>

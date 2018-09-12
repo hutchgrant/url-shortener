@@ -6,12 +6,8 @@ const MainLayout = WrappedComponent => {
 
     render() {
       return (
-        <div className="full-layout">
-          <div className="full-content">
-            <div className="content container">
-              <WrappedComponent {...this.props} />
-            </div>
-          </div>
+        <div className="content container">
+          <WrappedComponent {...this.props} />
         </div>
       );
     }

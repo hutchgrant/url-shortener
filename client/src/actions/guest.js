@@ -9,20 +9,25 @@ export const createShortURL = url => async dispatch => {
     .then(res => {
       if (res.status === 200) {
         dispatch({ type: ADD_URL, payload: res.data });
-      } else {
-        dispatch(urlFail(res.data.error));
       }
+    })
+    .catch(err => {
+      dispatch(urlFail(err.response.data.error));
     });
 };
 
 export const fetchURL = (url, getInfo) => async dispatch => {
-  await client.get(`/url/${url}?info=${getInfo}`).then(res => {
-    if (res.status === 200) {
-      dispatch({ type: FETCH_URL, payload: res.data });
-    } else {
-      dispatch(urlFail(res.data.error));
-    }
-  });
+  await client
+    .get(`/url/${url}?info=${getInfo}`)
+    .then(res => {
+      console.log(res.status);
+      if (res.status === 200) {
+        dispatch({ type: FETCH_URL, payload: res.data });
+      }
+    })
+    .catch(err => {
+      dispatch(urlFail(err.response.data.error));
+    });
 };
 
 export const urlFail = error => {

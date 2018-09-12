@@ -9,6 +9,7 @@ router.get('/url/:short', agent.getIPAgent, async (req, res) => {
   try {
     let { short } = req.params,
       lngUrl = '';
+    console.log(short);
     validate.checkUrl(short, true);
     if (req.query.info !== 'true') {
       // count query as a view
@@ -23,6 +24,7 @@ router.get('/url/:short', agent.getIPAgent, async (req, res) => {
     }
     res.status(200).json({ url: lngUrl });
   } catch (err) {
+    console.log(err);
     res.status(500).json({
       error: 'Sorry, the url you were looking for could not be found.'
     });
