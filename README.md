@@ -23,8 +23,6 @@ Edit ./config/keys.js with your mongodb URI
 mongoURI: 'mongodb://127.0.0.1/url-shortner'
 ```
 
-Redux Dev Tools can be enabled in ./client/src/index.js
-
 ### Development
 
 ```
