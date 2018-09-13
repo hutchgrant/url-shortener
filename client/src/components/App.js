@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Landing from './Landing';
 import Page from './Page';
-import Info from './Info';
+import Info from './Info/Info';
 import Error404 from './Error404';
 
 class App extends Component {

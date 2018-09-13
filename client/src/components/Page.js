@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/guest';
 import Loading from './Loading';
 import Error404 from './Error404';
+import MainLayout from './Layouts/MainLayout';
 
 class Page extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class Page extends Component {
     if (!loading && !error) {
       return (
         <div>
-          <h2>Redirecting to {url}</h2>
+          <h2 className="text-center">Redirecting to {url}</h2>
         </div>
       );
     }
@@ -59,4 +60,4 @@ function mapStateToProps({ guest }) {
 export default connect(
   mapStateToProps,
   actions
-)(Page);
+)(MainLayout(Page));

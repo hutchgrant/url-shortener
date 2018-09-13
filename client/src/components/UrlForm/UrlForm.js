@@ -17,6 +17,7 @@ let field = {
 class UrlForm extends Component {
   async onSubmit(value) {
     await this.props.createShortURL(value);
+    this.props.reset();
   }
 
   renderForm() {
@@ -52,7 +53,7 @@ class UrlForm extends Component {
         return (
           <div className="row">
             <div className="col-md-12 url-short">
-              {window.location.href}
+              {process.env.REACT_APP_DOMAIN}
               {short}
             </div>
           </div>
