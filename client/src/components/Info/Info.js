@@ -125,22 +125,44 @@ class Info extends Component {
       return (
         <div>
           <div className="url-info">
-            <p>
-              Short URL:{' '}
-              <a href={process.env.REACT_APP_DOMAIN + short}>
-                {process.env.REACT_APP_DOMAIN}
-                {short}
-              </a>{' '}
-              <br />
-              Long URL: {long} <br />
-              Created: {moment(createdAt).format('MM/DD/YYYY h:mm:ss a')} <br />
-              Updated: {moment(updatedAt).format('MM/DD/YYYY h:mm:ss a')} <br />
-              Views: {views}
-            </p>
+            <div className="row">
+              <div className="col-md-8 col-12">
+                <p>
+                  <span id="short-url">
+                    Short URL:{' '}
+                    <a href={process.env.REACT_APP_DOMAIN + short}>
+                      {process.env.REACT_APP_DOMAIN}
+                      {short}
+                    </a>
+                  </span>
+                  <br />
+                  <span id="long-url">Long URL: {long}</span> <br />
+                  Created: {moment(createdAt).format(
+                    'MM/DD/YYYY h:mm:ss a'
+                  )}{' '}
+                  <br />
+                  Updated: {moment(updatedAt).format(
+                    'MM/DD/YYYY h:mm:ss a'
+                  )}{' '}
+                  <br />
+                </p>
+              </div>
+              <div className="col-md-4 col-12 info-right">
+                <span id="views">Total Views: {views}</span> <br />
+                <div className="btn-group">
+                  <button className="btn-primary">7d</button>
+                  <button className="btn-primary">1w</button>
+                  <button className="btn-primary">1m</button>
+                  <button className="btn-primary">1y</button>
+                </div>
+              </div>
+            </div>
+            <div className="chart">
+              <Chart data={dailyviews} />
+            </div>
+            {this.renderViewers(viewers)}
+            {this.renderPaginate(views)}
           </div>
-          <Chart data={dailyviews} />
-          {this.renderViewers(viewers)}
-          {this.renderPaginate(views)}
         </div>
       );
     }

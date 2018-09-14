@@ -12,7 +12,7 @@ export default function(state = null, { type, payload }) {
       if (state && state.urls) {
         Object.assign(urls, state.urls);
       }
-      urls.push({ ...payload });
+      urls.unshift({ ...payload });
       return { ...state, urls };
     case FETCH_URL:
       return { ...state, ...payload };

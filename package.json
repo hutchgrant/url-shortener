@@ -1,14 +1,18 @@
 {
   "name": "url-shortner",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "setupTestFrameworkScriptFile": "./tests/setup.js"
+  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "install-all": "npm install && npm install --prefix client"
+    "install-all": "npm install && npm install --prefix client",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -16,8 +20,10 @@
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
+    "jest": "^23.6.0",
     "moment": "^2.22.2",
     "mongoose": "^5.2.14",
+    "puppeteer": "^1.8.0",
     "request": "^2.88.0",
     "request-ip": "^2.1.1",
     "useragent": "^2.3.0",

@@ -37,7 +37,6 @@ export const fetchViewers = (
   direction,
   search
 ) => async dispatch => {
-  console.log(url);
   await client
     .get(
       `/url/viewers/${url}?page=` +

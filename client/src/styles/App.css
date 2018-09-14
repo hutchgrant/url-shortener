@@ -90,6 +90,28 @@ fieldset {
   border: 1px solid #8080804d;
   margin-bottom: 10px;
 }
+
+.info-right {
+  text-align: right;
+  vertical-align: bottom;
+  padding-top: 40px;
+}
+
+@media (max-width: 756px) {
+  .url-info {
+    padding: 2px;
+    box-shadow: 1px 1px 5px 2px #e9e9e9;
+    border: 1px solid #8080804d;
+    margin-bottom: 10px;
+  }
+  .info-right {
+    text-align: center;
+  }
+  .container {
+    padding: 2px !important;
+  }
+}
+
 .url-viewer {
   padding: 20px;
   border: 1px solid black;
