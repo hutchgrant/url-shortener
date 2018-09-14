@@ -30,3 +30,17 @@ npm run dev
 ```
 
 React frontend should be accessible at http://localhost:3000 and the Node.js backend is accessible at http://localhost:5000
+
+### Testing
+
+```
+npm run test
+```
+
+### Author
+
+**Grant Hutchinson (hutchgrant)**
+
+### License
+
+Released under the MIT License
