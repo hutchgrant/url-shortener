@@ -6,8 +6,8 @@ const dailyViewFactory = require('../factories/dailyViewFactory');
 class CustomPage {
   static async build() {
     const browser = await puppeteer.launch({
-      headless: false
-      // // args: ['--no-sandbox']
+      headless: true,
+      args: ['--no-sandbox']
     });
 
     const page = await browser.newPage();

@@ -22,7 +22,7 @@ test('after creating short url, selecting short url loads correct redirect url',
   expect(fetchUrl).toMatch(shortUrl);
 });
 
-test('after creating short url, selecting short url loads correct redirect url', async () => {
+test('after creating short url, opening short url page redirect to long url', async () => {
   await page.goto(shortUrl);
   await page.waitFor('.appContainer');
   let fetchUrl = await page.url();
